@@ -96,6 +96,9 @@ img {
     z-index: var(--z-modal);
     visibility: hidden;
     opacity: 0;
+
+    /*=== Effect 3 ===*/
+    perspective: 1000px;
 }
 
 .modal_content {
@@ -107,7 +110,14 @@ img {
     transition: all .3s;
 
     /*=== Effect 1 ===*/
-    transform: translateY(10%);
+    /*transform: translateY(10%);*/
+
+    /*=== Effect 2 ===*/
+    /*transform: scale(.5) translateY(10%);*/
+
+    /*=== Effect 3 ===*/
+    transform: rotateX(65deg) scale(.75) translateY(10%);
+    transform-origin: 50% 100%;
 }
 
 
@@ -158,8 +168,28 @@ img {
 }
 
 .show-modal .modal_content {
+    /*=== Effect 1 ===*/
     transform: translateY(0);
+
+    /*=== Effect 2 ===*/
+    /*transform: scale(1) translateY(0);*/
+
+    /*=== Effect 3 ===*/
+    transform: rotateX(0deg) scale(1) translateY(0);
 }
+
+
 
 /*========== Breakpoints  ==========*/
 /*========== For small devices  ==========*/
+@media screen and (min-width: 576px) {
+    .modal_content {
+        margin: auto;
+        width: 380px;
+        border-radius: 1.25rem;
+    }
+
+    .modal_img{
+        width:170px;
+    }
+}
